@@ -1,6 +1,6 @@
 ---
 layout: mypost
-title: 原型和原型链
+title: Vue3 为什么要用 Proxy 代替 Object.defineProperty
 categories: [javascript]
 ---
 
