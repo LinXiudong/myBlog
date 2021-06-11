@@ -11,7 +11,7 @@ author: lxd
 # 项目环境
 # 静态资源找不到，链接点进去不对时请检查下这里的配置
 # demo.com访问设置为""，demo.com/blog/访问设置为"/blog"
-context: "/blog"
+context: "/myBlog"
 
 # 用来生成sitemap
 # siteMapPrefix: "http://blog.tmaize.net"
