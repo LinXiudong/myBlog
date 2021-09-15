@@ -16,7 +16,7 @@ categories: [常用命令]
 
 - tree /f > tree.txt
 
-把文档树结构导出到tree.txt
+把文档树结构导出到 tree.txt
 
 # npm
 
@@ -35,28 +35,30 @@ npm cache clean 清理缓存
 # git
 
 ## git add
-在提交之前,git有一个暂存区(staging area),可以放入新添加的文件或者加入新的改动。 commit时提交的改动是上一次加入到staging area中的改动,而不是我们disk上的改动。
+
+在提交之前,git 有一个暂存区(staging area),可以放入新添加的文件或者加入新的改动。 commit 时提交的改动是上一次加入到 staging area 中的改动,而不是我们 disk 上的改动。
 
 - git add .
 
 会递归地添加当前工作目录中的所有文件。
 
 ## git commit
-提交已经被add进来的改动.
+
+提交已经被 add 进来的改动.
 
 - git commit -m "the commit message"
 
 提交并说明提交信息
 
 ## git push
+
 push your new branches and data to a remote repository.
 
 - git push [alias] [branch]
 
-将会把当前分支merge到alias上的[branch]分支。如果分支已经存在,将会更新,如果不存在,将会添加这个分支。
+将会把当前分支 merge 到 alias 上的[branch]分支。如果分支已经存在,将会更新,如果不存在,将会添加这个分支。
 
-如果有多个人向同一个remote repo push代码, Git会首先在你试图push的分支上运行git log,检查它的历史中是否能看到server上的branch现在的tip,如果本地历史中不能看到server的tip,说明本地的代码不是最新的,Git会拒绝你的push,让你先fetch,merge,之后再push,这样就保证了所有人的改动都会被考虑进来。
-
+如果有多个人向同一个 remote repo push 代码, Git 会首先在你试图 push 的分支上运行 git log,检查它的历史中是否能看到 server 上的 branch 现在的 tip,如果本地历史中不能看到 server 的 tip,说明本地的代码不是最新的,Git 会拒绝你的 push,让你先 fetch,merge,之后再 push,这样就保证了所有人的改动都会被考虑进来。
 
 ## 获取/更新远程分支列表
 
@@ -71,9 +73,9 @@ push your new branches and data to a remote repository.
 ## Git 删除提交记录
 
 - Checkout
- 
+
 > git checkout --orphan latest_branch
- 
+
 - Add all the files
 
 > git add -A
@@ -93,3 +95,13 @@ push your new branches and data to a remote repository.
 - Finally, force update your repository
 
 > git push -f origin master
+
+## git 错误处理
+
+Unable to access ‘https://github.com仓库.git/‘: OpenSSL SSL_read: Connection was reset, errno 10054
+
+直接在 pycharm 的 Terminal 输入下面命令就成了，一般第一条就可以了，后面两条是取消代理设置，在第一条无效的时候可以试试
+
+- git config --global http.sslVerify false
+- git config --global --unset http.proxy
+- git config --global --unset https.proxy
